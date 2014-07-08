@@ -13,6 +13,7 @@
   var zctasTable = "1IHiq6ZbUOIcEJDTcnGBSeY7MTDWEl-R_bEhpFmvj";
   //EDUCATION
   var schoolsTable = "1qFlaLhdDyboBG0_X6n2aVG-ELpVC24lsUpjpKxE9";
+  var higherEdTable = "1Q98D88ABUIOlTyc1EpWEmuxbx9VZ5QbIvza3FKGx";
   //ENV HEALTH
   var brownfieldsTable = "1hqvmp5p7p79W9vRGJN0P3Nvba9mDKmHNHrP9_b2A";
   var criticalHabitatTable = "1wf1mUWaQPBq538Ys10HG1TXKWImFmz5US3zwBFu-";
@@ -20,7 +21,7 @@
   var statsSoilsTable = "1Hkl4nXjdG_OG6Ky0e_DVdCMq9CDyfE7ivJ2jREqx";
   var mgmtDistrictsTable = "1OCsPa-OjJ6wayr8j7ZuO_uPAMAao4iC3gGy15Knw";
   //INFRA DEV
-  var emergingProjectTable = "102ZcPuAx3XQ8EZhXxjz9TU8VJxiNYB6VVSJkA0LN"; 
+  var emergingProjectTable = "102ZcPuAx3XQ8EZhXxjz9TU8VJxiNYB6VVSJkA0LN";
   var airportTable = "1EAHy46KB9AQkF7-eKUCANVFKhK41k5B8GZLLn_tE"; 
   var railStopTable = "1W1EdiG-H7l2m9xFBWNjhVMTZ2O2dlQTrdchGriLG"; 
   var interstateTable = "13qL8GPdUQgdNeP22QJ_uW_-hc02Ln9wzXjsMEAay"; 
@@ -36,7 +37,9 @@
   var allStreamsTable = "1LOdz4vpHNc7vTgxwkJ7_aNRYG3TqtyOOuMBSJ4sp";
   var aquiferTable = "1BuHzMZK1zm65Y5Ya4foIN5GiXcKWEScOPsV95_QW";
   var parkLandTable = "16-AuqR9e7vGoHEvGhHR5pk2fdxBC9xEP74WMs5x_";
-	
+//Business Development
+  var smallBizTable = "1e1LMrXDJuUce1K9XYtpxBIbIkqnBe5Qr-552bFWK";
+
   
   //****This section is declaring the layers ready to visualize ***//
   var layerArray = [];
@@ -68,8 +71,8 @@
         where: ""
       },
       options: {
-        styleId: 3,
-        templateId: 3
+        styleId: 2,
+        templateId: 2
       }
     });
 	layer.setMap(map);
