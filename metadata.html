@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--
+	Linear by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Interactive GIS Web Viewer</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&amp;v=3"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/google_style.css" />
+		</noscript>
+		
+	</head>
+	<body>
+
+	<!-- Header -->
+		<div id="header">
+			
+			<div class="container"> 
+				
+				<!-- Logo -->
+				<div id="logo">
+					<span class="tag">Interactive GIS Pilot Viewer By Civic Analytics</span>
+				</div>
+			</div>
+			<div id="nav-wrapper"> 
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Map</a></li>
+						<li><a href="table.html">Table</a></li>
+						<li><a href="metadata.html">Metadata</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	<!-- Header --> 
+
+	<!-- Main -->
+		<div id="main">
+			<div id="content" class="container">
+				<section>
+					<header>
+						<h2>Metadata</h2>
+						<span class="byline">Storage Location for Metadata</span>
+					</header>
+					<form style="margin: 0 auto; text-align:center; padding: -10px; ">
+					  <label><strong>Select Your File: </strong></label>
+					  <select id="myFiles">
+						<option value="Projects" selected>Emerging Projects</option>
+						<option value="Population">Population, 2013</option>
+						<option value="Income">Median Household Income, 2008-2012</option>
+						<option value="Education">Bachelors Degree or Higher</option>
+					  </select>
+					  <label><strong>Extra Dropdown: </strong></label>
+					  <select id="County">
+					  <option value = '' selected>All Counties</option>
+						<option value="Clay">Clay</option>
+						<option value="Craighead">Craighead</option>
+						<option value="Crittenden">Crittenden</option>
+						<option value="Cross">Cross</option>
+						<option value="Greene">Greene</option>
+						<option value="Lawrence">Lawrence</option>
+						<option value="Lee">Lee</option>
+						<option value="Mississippi">Mississippi</option>
+						<option value="Phillips">Phillips</option>
+						<option value="Poinsett">Poinsett</option>
+						<option value="Randolph">Randolph</option>
+						<option value="St. Francis">St. Francis</option>
+					  </select>
+					<input type="button" value="Search" id="search_files">
+					</form>
+				</section>
+				
+				<p>Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor enim</p>
+				
+				<input type="file" id="files" name="files[]" multiple />
+				<output id="list">
+				<p id="output">  </p>
+				
+				<script type="text/javascript">
+				  function readMultipleFiles(evt) {
+					//Retrieve all the files from the FileList object
+					var files = evt.target.files; 
+							
+					if (files) {
+						for (var i=0, f; f=files[i]; i++) {
+							  var r = new FileReader();
+							r.onload = (function(f) {
+								return function(e) {
+									var contents = e.target.result;
+									//document.getElementById("demo").innerHTML = e.target.result;
+									xmlDoc = $.parseXML(contents),
+									$xml = $( xmlDoc ),
+									$options_title = $xml.find("resTitle");
+										$.each($options_title, function() {
+											$("#output").append( "<b>Title: </b>" + $(this).text() + " <br>");
+										}); 
+										
+									$options_key = $xml.find("keyword");
+											$("#output").append( "<b>Tags: </b>" );
+											i = 0;
+											var tag_count = $xml.find("keyword").size();
+										$.each($options_key, function() {
+											i +=1
+											if (i === tag_count)
+											{
+												$("#output").append( " " + $(this).text() + "<br>");
+											} else {
+												$("#output").append( " " + $(this).text() + ", ");
+											}
+										}); 
+									$options_summ = $xml.find("idPurp");
+										$.each($options_summ, function() {
+											$("#output").append( "<b>Summary: </b>" + $(this).text() + " <br>");
+										}); 
+									
+									$options_desc = $xml.find("idAbs");
+										$.each($options_desc, function() {
+											$("#output").append( "<b>Description: </b>" + $(this).text() + " <br>");
+										});
+										
+									$options_cred = $xml.find("idCredit");
+										$.each($options_cred, function() {
+											$("#output").append( "<b>Description: </b>" + $(this).text() + " <br>");
+										});
+										
+									$options_lim = $xml.find("useLimit");
+										$.each($options_lim, function() {
+											$("#output").append( "<b>Use Limitations: </b>" + $(this).text() + " <br>");
+										});
+									
+									$options_meta = $xml.find("Process");
+										$.each($options_meta, function() {
+											$("#output").append( "<b>Metadata: </b>" + $(this).text() + " <br>");
+										});
+								};
+							})(f);
+
+							r.readAsText(f);
+						}   
+					} else {
+						  alert("Failed to load files"); 
+					}
+				  }
+				  
+				  document.getElementById('files').addEventListener('change', readMultipleFiles, false);
+				</script>
+				
+				
+			</div>
+		</div>
+	<!-- /Main -->
+
+
+	<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<section>
+					<header>
+						<h2>Get in touch</h2>
+						<span class="byline">East Arkansas Planning and Development District</span>
+					</header>
+					<ul class="contact">
+						<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
+						<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
+						<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
+						<li><a href="#" class="fa fa-tumblr"><span>Google+</span></a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+	<!-- /Footer -->
+
+	<!-- Copyright -->
+		<div id="copyright">
+			<div class="container">
+				Design: <a href="#">Civic Analytics</a>
+			</div>
+		</div>
+
+
+	</body>
+</html>
