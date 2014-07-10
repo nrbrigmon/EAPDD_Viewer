@@ -9,7 +9,7 @@
 
 <html>
 	<head>
-		<title>GIS Web Viewer</title>
+		<title>Regional Data Portal</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="gis web viewer for the east arkansas planning district" />
 		<meta name="keywords" content="gis, east arkansas, planning, census" />
@@ -26,8 +26,7 @@
 		</noscript>
 	</head>
 	<body>
-	
-	<div id="main">
+		<div id="main">
 		<!-- Main -->
 		<div id="content" class="container">
 			<br/>
@@ -89,8 +88,8 @@
 		<br/>
 		<!--Section for the map menu/checkbox -->
 			<div id="menu_button">
-				<img src="images/menu_list_icon.png"/>
-				<img src="images/menu_list_icon_hover.png" style="display:none"/>
+				<img src="images/menu_list_icon.png" height="40"/>
+				<img src="images/menu_list_icon_hover.png" height="40" style="display:none"/>
 			</div>
 			<div id="map-menu">
 			<script type="text/javascript" src="js/downloadFiles.js"></script>
@@ -112,6 +111,7 @@
 					<ul class="edu-list">
 					  	<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_PublicSchools" id="PublicSchoolsCheckbox">Public School Locations</li>
 						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Education" id="EducationCheckbox">Bachelors Degree or Higher</li>
+                        <li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_HigherEd" id="HigherEdCheckbox">Places of Higher Education</li>
 					</ul>
 				<h3 class="env-menu">Environmental Health</h3>
 					<ul class="env-list">
@@ -146,9 +146,13 @@
 						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Aquifers" id="AquifersCheckbox">Aquifers</li>
 						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Wetlands" id="WetlandsCheckbox">Wetlands</li>
 					</ul>
-				<h3 style="text-align:center"><input value="Download KML Layer(s)" onclick="downloadKmls(this.form)">	</h3> 
+                <h3 class="biz-menu">Business Development</h3>
+                    <ul class="biz-list">
+                        <li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_SmallBiz" id="SmallBizCheckbox">Small Businesses - Manufacturing </li>
+                    </ul>
+				<h3 style="text-align:center"><input class="button" value="Download KML Layer(s)" onclick="downloadKmls(this.form)" id="dataDownload">	</h3>
 				</form>
-				
+                <iframe src="" id="download-iframe"></iframe>
 			</div>
 		<!-- /Section for the map menu/checkbox -->
 			
@@ -162,7 +166,7 @@
 
 			<script type="text/javascript" src="js/hidemap.js"></script>
 			<div id="tableResults">
-			<p id="sub-header"><b>Table Results Here:</b></p>
+			<div id="sub-header"><b>Table Results Here:</b></div>
 				<table class="tableResults">
 					<tr style="border:1px solid black;">
 						<td>0</td>
@@ -221,11 +225,12 @@
 		<!-- /Main -->
 		<!-- Footer -->
 		<div id="sub-header">
-				Last Updated 7/7/2014
+				Last Updated 7/10/2014
 				by Nathan Brigmon, Civic Analytics
 		</div>
 
 	</div>
+</div>
 
 	</body>
 </html>

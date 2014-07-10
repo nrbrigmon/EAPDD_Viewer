@@ -90,6 +90,9 @@ $(document).ready(function(){
         $('.parks-menu').click(function(){
                 $('.parks-list').slideToggle(750);
         });
+        $('.biz-menu').click(function(){
+            $('.biz-list').slideToggle(750);
+        });
 
 });
 

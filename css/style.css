@@ -31,13 +31,13 @@
 	b {
 		font-weight: 700;
 	}
-	a
+	.container > a
 	{
 		text-decoration: none;
 		color: white;
 	}
 	
-	a:hover
+	.container > a:hover
 	{
 		font-weight:600;
 	}
@@ -78,16 +78,22 @@
 		vertical-align:middle;
 		height:40px;
 		text-align:right;
-		background-color: #777777;
-		border: 1px solid black;
+		background-color: #636266;
+		border:1px solid #6F6E73;
 		font-size:18px;
+		box-shadow: 3px 3px 1px #CDCBBC;
+		-webkit-box-shadow: 3px 3px 1px #CDCBBC;
+		-moz-box-shadow: 3px 3px 1px #ccc;
 	}
 	.divider:hover
 	{
-		background-color: #D8D8D8;
+		background-color: #6F6E73;
+		box-shadow: 3px 3px 1px #CDCBBC;
+		-webkit-box-shadow: 3px 3px 1px #CDCBBC;
+		-moz-box-shadow: 3px 3px 1px #CDCBBC;
 
 	}
-	img
+	.divider > img
 	{
 		vertical-align:middle;
 		height:40px;
@@ -107,7 +113,7 @@
 	  margin: 0 auto;
 	  padding: 5px;
 	  width: 90%;
-	  border:1px solid #777777; 
+	  border:2px solid #777777; 
 	  margin: 0 auto;
 	  z-index: 1;
 	}
@@ -148,6 +154,14 @@
 		width: 1025px;
 		margin-left: auto;
 		margin-right: auto;
+		box-shadow: 3px 3px 2px 3px #CDCBBC;
+		-webkit-box-shadow: 3px 3px 2px 3px #CDCBBC;
+		-moz-box-shadow: 3px 3px 2px 3px #CDCBBC;
+		background-color: #FFFFFF;
+
+	}
+	div#main{
+		background-color: #F0EDDC;
 	}
 	#menu_button
 	{
@@ -170,14 +184,13 @@
 	}
 	.googft-info-window a:hover{
 		text-decoration: underline;
-		font-weight:300;
 	}
 
 /*********************************************************************************/
 /* Map Menu                                                                      */
 /*********************************************************************************/
 	#map-menu{
-		background-color:#333333;
+		background-color:#434245;
 		padding:3px;
 		position:absolute;
 		z-index:10;
@@ -195,7 +208,7 @@
 	}
 	#map-menu h3:hover{
 		font-weight:600;
-		background-color: #CEF6D8;
+		background-color: #F6CEB1;
 	}
 	#map-menu li{
 		background-color: #FBFBFB;
@@ -203,11 +216,11 @@
 	}
 
 	#map-menu li:hover{
-		background-color: #CEF6D8;
+		background-color: #F6CEB1;
 	}
 	.crime-list, .demo-list,
 	.edu-list, .env-list, .parks-list,
-	.infra-list{
+	.infra-list, .biz-list{
 		font-size: 12px;
 		border:none; 
 		padding:0px;
@@ -224,17 +237,21 @@
 		padding-left: 10px;
 		padding-right: 10px;
 	}
-
+    #download-iframe
+    {
+        display:none;
+    }
 /*********************************************************************************/
 /* Tutorial CSS                                                                  */
 /*********************************************************************************/
 
-	h6.subheader{
+	h4.subheader{
 		text-align:center;
-		color:#0B6121;
-		padding:6px;
-		font-size: 1.6em;
-		font-weight: 500;
+		color:#F4781E;
+		padding:8px;
+		font-size: 1.5em;
+		font-weight: 700;
+		line-height: 1.75em;
 	}
 	.subcontainer
 	{
@@ -242,27 +259,47 @@
 		padding-right: 10%;
 		display:none;
 	}
+	.subcontainer_intro
+	{
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	div.subcontainer>p,
+	div.subcontainer_intro>p{
+		line-height: 1.4em;
+		margin:20px 0 20px 0;
+	}
 	.subcontainer > img{
 		margin-left: auto;
 		margin-right: auto;
 		display:block;
-		height:150px;
-		width:250px;
-		padding:6px;
+		padding:5px;
+		margin-top: 10px;
+		border:1px solid #888888;
+		box-shadow: 3px 3px 1px #ccc;
+		-webkit-box-shadow: 3px 3px 1px #ccc;
+		-moz-box-shadow: 3px 3px 1px #ccc;
 	}
-	div.subcontainer > p > a:link{
-		color:blue;
-		text-decoration: underline;
-	}
-	div.subcontainer > p > a:visited{
-		color:red;
+	div.subcontainer > p > a:link,
+	div.subcontainer_intro > p > a:link,
+	div.subcontainer > p > a:visited,
+	div.subcontainer_intro > p > a:visited
+	{
+		color:#F4781E;
 		text-decoration: none;
 	}
-	.subcontainer > img.first_pic{
-		margin-left: auto;
-		margin-right: auto;
-		display:block;
-		height:250px;
-		width:450px;
-		padding:6px;
+	div.subcontainer > p > a:hover,
+	div.subcontainer_intro > p > a:hover{
+		text-decoration: underline;
+		
+	}
+	div.subcontainer > p.caption{
+		text-align: center;
+		color:#777777;
+		margin-top: 3px;
+		font-size: 0.8em;
+	}
+	.subcontainer > ul{
+		margin-left: 30px;
+		list-style-type: square;
 	}

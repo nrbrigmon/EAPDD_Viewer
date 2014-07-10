@@ -62,6 +62,7 @@
       zoom: defaultZoom,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+
     layer = new google.maps.FusionTablesLayer({
       map: map,
       heatmap: { enabled: false },
@@ -75,7 +76,8 @@
         templateId: 2
       }
     });
-	layer.setMap(map);
+	layer.setMap(map); //CURRENT BOUNDARY LAYER AS PLACEHOLDER
+
       var zoomToAddress = function() {
           var address = document.getElementById('address').value;
           geocoder.geocode({
@@ -124,24 +126,7 @@
     });
     
 }
-function maxCheckboxes(){
-	var checkboxes = document.getElementsByTagName('input');
-	var numSelected = 0;
-	var current;
 
-	for (var i=checkboxes.length;i--;) {
-		current = checkboxes[i];
-
-		if (current.type.toLowerCase() == "checkbox" && current.checked) {
-			current++;
-			console.log(current);
-
-		};
-	};
-	if (current > 5) {
-		alert("You've got " + current + " selected! :(");
-	}
-}
 	/* layer = new google.maps.FusionTablesLayer({
       map: map,
       heatmap: { enabled: false },
@@ -156,28 +141,59 @@ function maxCheckboxes(){
       }
     }); */
 
-
+  layer1 = new google.maps.FusionTablesLayer({
+      map: map,
+      heatmap: { enabled: false },
+      query: {
+          select: "col2",
+          from: higherEdTable,
+          where: ""
+      },
+      options: {
+          styleId: 2,
+          templateId: 2
+      }
+  });
+  layer2 = new google.maps.FusionTablesLayer({
+      map: map,
+      heatmap: { enabled: false },
+      query: {
+          select: "col2",
+          from: smallBizTable,
+          where: ""
+      },
+      options: {
+          styleId: 2,
+          templateId: 2
+      }
+  });
 //**Toggle Function for the checkbox**///
   function ToggleLayer(tableSelection){
-		maxCheckboxes();
-		 if (tableSelection == "CB_Fire")
+		 if (tableSelection == "CB_HigherEd")
 		{
-		  if (document.getElementById("FireCheckbox").checked == true)
+		  if (document.getElementById("HigherEdCheckbox").checked == true)
 		  {
-			if (layer3.getMap() == null) {layer3.setMap(map);}
+			if (layer1.getMap() == null) {layer1.setMap(map);}
 		  }
-		  if (document.getElementById("FireCheckbox").checked == false) {layer3.setMap(null);}
+		  if (document.getElementById("HigherEdCheckbox").checked == false) {layer1.setMap(null);}
 		}
 		
-		if (tableSelection == "CB_Police")
+		if (tableSelection == "CB_SmallBiz")
 		{
-		  if (document.getElementById("PoliceCheckbox").checked == true)
+		  if (document.getElementById("SmallBizCheckbox").checked == true)
 		  {
 			if (layer2.getMap() == null) {layer2.setMap(map); }
 		  }
-		  if (document.getElementById("PoliceCheckbox").checked == false) {layer2.setMap(null);}
+		  if (document.getElementById("SmallBizCheckbox").checked == false) {layer2.setMap(null);}
 		}
-		
+      if (tableSelection == "CB_Boundary")
+      {
+          if (document.getElementById("BoundaryCheckbox").checked == true)
+          {
+              if (layer.getMap() == null) {layer.setMap(map); }
+          }
+          if (document.getElementById("BoundaryCheckbox").checked == false) {layer.setMap(null);}
+      }
 	}
 
   //COUNTY CENTROIDS

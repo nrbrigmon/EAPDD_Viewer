@@ -1,45 +1,9 @@
-//****This section is declaring the table IDs ***//
-var boundaryTable = "1qRvxdz39EShuruJy3YXqF3BbfXLZYaNd4D9-1UVb";
-//CRIME
-var fireTable = "18be1mKs33mrqnayTnVqjqqtXJdpPswWX8DEoaI0D";
-var policeTable = "1_rG77iqslLY2AebdLOWeEubA3tnfM05REHR2_k0v";
-//DEMOGRAPHICS
-var censusTable = "1L-KESccU0d6a6FYZpX8GuMcGHPgrrYHca7HnHDr9"; //POPULATION / EDUCATION / INCOME table id
-var blockGroupTable = "1dgI_iSc6km2H64cH6vzwjnvSMA08-cUpsHLUktVy";
-var blocksTable = "1Nm-Wi72eDqw0CED0ylwizPiQ0y93V3hLOj374Q7-";
-var tractsTable = "1bnU9uy9rwn57zL_aJRITg1L4SRErCuEyNydtIlZ6";
-var zctasTable = "1IHiq6ZbUOIcEJDTcnGBSeY7MTDWEl-R_bEhpFmvj";
-//EDUCATION
-var schoolsTable = "1qFlaLhdDyboBG0_X6n2aVG-ELpVC24lsUpjpKxE9";
-//ENV HEALTH
-var brownfieldsTable = "1hqvmp5p7p79W9vRGJN0P3Nvba9mDKmHNHrP9_b2A";
-var criticalHabitatTable = "1wf1mUWaQPBq538Ys10HG1TXKWImFmz5US3zwBFu-";
-var sensitiveStreamsTable = "1Y7ZxPVLXEYHnUMbazO9nxPRcd8H_j6U6grCGsm0H";
-var statsSoilsTable = "1Hkl4nXjdG_OG6Ky0e_DVdCMq9CDyfE7ivJ2jREqx";
-var mgmtDistrictsTable = "1OCsPa-OjJ6wayr8j7ZuO_uPAMAao4iC3gGy15Knw";
-//INFRA DEV
-var emergingProjectTable = "102ZcPuAx3XQ8EZhXxjz9TU8VJxiNYB6VVSJkA0LN"; 
-var airportTable = "1EAHy46KB9AQkF7-eKUCANVFKhK41k5B8GZLLn_tE"; 
-var railStopTable = "1W1EdiG-H7l2m9xFBWNjhVMTZ2O2dlQTrdchGriLG"; 
-var interstateTable = "13qL8GPdUQgdNeP22QJ_uW_-hc02Ln9wzXjsMEAay"; 
-var portsTable = "1Pd7dPI5yDp2oxfGswIJMqJMKVSJUw5ATGqYmSPHZ"; 
-var railRoadTable = "1_Pru4FnxfcxBQGYqcUBtp8Gx3CuypZtvAjiuSvCw"; 
-//LU PLANNING
-var tazsTable = "1avBwYMT3gPVf-xd_s0a_uySayPcdkpoK_Wpld8lY";
-var countiesTable = "16mOieypquzOAotwxY06wZtDdNU3eTVd9fR59LTWi";
-var schoolDistrictsTable = "1z32mA1xZtcKk9k-8lz3lAcsmx-Yxu3L5qP4ExlE5";
-var cityLimitsTable = "1J0xwcoFPYjSIeWIWCiH3i66RQHf4dx1agE47hTy6";
-//PARKS AND REC
-var wetlandsTable = "18l5s_ipzrymIWNan-dc9vODOdAFpk6cfiwITeMht";
-var allStreamsTable = "1LOdz4vpHNc7vTgxwkJ7_aNRYG3TqtyOOuMBSJ4sp";
-var aquiferTable = "1BuHzMZK1zm65Y5Ya4foIN5GiXcKWEScOPsV95_QW";
-var parkLandTable = "16-AuqR9e7vGoHEvGhHR5pk2fdxBC9xEP74WMs5x_";
-  
+
 function downloadKmls(frm)
 {
-	kmlArray = [];
+	var kmlArray = [];
 	//loop through elements and identify checked layers
-	for (var i = 0; i < frm.elements.length; i++){
+	for (i = 0; i < frm.elements.length; i++){
 		if (frm.elements[i].checked)
 		{ //then create an array
 			kmlArray.push(frm.elements[i].value);
@@ -47,11 +11,11 @@ function downloadKmls(frm)
 	}
 	//loop through kml array and create downloadable link array 
 	//there is an easier way, but I haven't gotten there yet...
-	kmlDownloadLinkArray = [];
+	var kmlDownloadLinkArray = [];
 	kmlLinkPart1 = "https://www.google.com/fusiontables/exporttable?query=select+col2+from+";
 	kmlLinkPart2 = "&o=kml&g=col2&styleId=2&templateId=2";
 	
-	for (var i = 0; i < kmlArray.length; i++){ //then create an array
+	for (i = 0; i < kmlArray.length; i++){ //then create an array
 		if (kmlArray[i] == "CB_Fire")		{ 	kmlDownloadLinkArray.push(kmlLinkPart1 + fireTable + kmlLinkPart2);	}
 		if (kmlArray[i] == "CB_Police")		{ 	kmlDownloadLinkArray.push(kmlLinkPart1 + policeTable + kmlLinkPart2);	}
 		if (kmlArray[i] == "CB_CensusBlocks")		{ 	kmlDownloadLinkArray.push(kmlLinkPart1 + blocksTable + kmlLinkPart2);	}
@@ -81,10 +45,45 @@ function downloadKmls(frm)
 		if (kmlArray[i] == "CB_RiversStreams")		{ 	kmlDownloadLinkArray.push(kmlLinkPart1 + allStreamsTable + kmlLinkPart2);	}
 		if (kmlArray[i] == "CB_Aquifers")		{ 	kmlDownloadLinkArray.push(kmlLinkPart1 + aquiferTable + kmlLinkPart2);	}
 		if (kmlArray[i] == "CB_Wetlands")		{ 	kmlDownloadLinkArray.push(kmlLinkPart1 + wetlandsTable + kmlLinkPart2);	}
+        if (kmlArray[i] == "CB_SmallBiz")		{ 	kmlDownloadLinkArray.push(kmlLinkPart1 + smallBizTable + kmlLinkPart2);	}
+        if (kmlArray[i] == "CB_HigherEd")		{ 	kmlDownloadLinkArray.push(kmlLinkPart1 + higherEdTable + kmlLinkPart2);	}
 	}
-	
 
-	for (var i = 0; i < kmlDownloadLinkArray.length; i++){ //then use array to download
-		window.location.assign(kmlDownloadLinkArray[i]);
+    console.log(kmlArray);
+    console.log(kmlDownloadLinkArray.length);
+
+	if (kmlDownloadLinkArray.length > 0){ //then use array to download //the below is the best way to download multiple files
+        if (kmlDownloadLinkArray.length == 1){
+            window.location.assign(kmlDownloadLinkArray[0]);
+            console.log("one selected");
+        }
+        if (kmlDownloadLinkArray.length == 2){
+            window.location.assign(kmlDownloadLinkArray[0]);
+            window.setInterval(console.log("waiting11111"),11111);
+            window.location.assign(kmlDownloadLinkArray[1]);
+            console.log("2 selected");
+        }
+        if (kmlDownloadLinkArray.length == 3){
+            window.open(kmlDownloadLinkArray[0], "_self");
+            window.open(kmlDownloadLinkArray[1], "_self");
+            window.open(kmlDownloadLinkArray[2], "_self");
+            console.log("3 selected");
+        }
+        if (kmlDownloadLinkArray.length == 4){
+            window.open(kmlDownloadLinkArray[0], "_self");
+            window.open(kmlDownloadLinkArray[1], "_self");
+            window.open(kmlDownloadLinkArray[2], "_self");
+            window.open(kmlDownloadLinkArray[3], "_self");
+            console.log("4 selected");
+        }
+        if (kmlDownloadLinkArray.length == 5){
+            window.open(kmlDownloadLinkArray[0], "_self");
+            window.open(kmlDownloadLinkArray[1], "_self");
+            window.open(kmlDownloadLinkArray[2], "_self");
+            window.open(kmlDownloadLinkArray[3], "_self");
+            window.open(kmlDownloadLinkArray[4], "_self");
+            console.log("5 selected");
+        }
 	}
+
 }

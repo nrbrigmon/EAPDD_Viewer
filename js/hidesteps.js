@@ -75,6 +75,22 @@ $(document).ready(function(){
         $('#img5').attr('src', src);
 
                 });
+
+        $('#clickme6').click(function() {
+                $('#intro').slideToggle(750);
+                var origsrc = $('#img6').attr('src');
+        var src = '';
+        if (origsrc == 'images/chevron_right_new.png') 
+        {
+                src = 'images/chevron_down_new.png';
+        }
+        if (origsrc == 'images/chevron_down_new.png') 
+        {
+                src = 'images/chevron_right_new.png';
+        }
+        $('#img6').attr('src', src);
+
+                });
 });
 
 
