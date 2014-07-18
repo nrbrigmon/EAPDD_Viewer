@@ -1,0 +1,362 @@
+/*<!--
+	Author:   Nathan Brigmon @ Civic Analytics
+    Date:     6/18/2014
+    URL:      /Civic/Projects/EAPDD/01_Working_Data/Nathan/FusionTableMapping/WebCode/index.html
+	Comments: This page was designed to be a testing ground for creating the interactive pilot 
+	viewer for the EAPDD. The web page is hosted on Google Drive.
+-->/*/
+
+@charset 'UTF-8';
+
+/*********************************************************************************/
+/* Basic and Core CSS                                                                        */
+/*********************************************************************************/
+
+	body
+	{
+		margin: 0;
+		padding: 0;
+		background-color: #F0EDDC;
+	}
+	div#main{
+		background-color: #F0EDDC;
+	}
+	body,textarea,select,p
+	{
+		font-family: 'Helvetica', sans-serif;
+		font-size: 11pt;
+		font-weight: 300;
+		line-height: 1.75em;
+		text-align: justify;
+	}
+		
+	b {
+		font-weight: 700;
+	}
+
+	.container {
+		max-width: 1000px;
+		width:85%;
+		margin-left: auto;
+		margin-right: auto;
+		box-shadow: 3px 3px 2px 3px #CDCBBC;
+		-webkit-box-shadow: 3px 3px 2px 3px #CDCBBC;
+		-moz-box-shadow: 3px 3px 2px 3px #CDCBBC;
+		background-color: #FFFFFF;
+
+	}
+	.container > a
+	{
+		text-decoration: none;
+		color: white;
+	}
+	
+	.container > a:hover
+	{
+		font-weight:600;
+	}
+
+	div#footer{
+		margin: 10px;
+		padding: 10px;
+	}
+	div#footer > p{
+		text-align: center;
+	}
+	.divider
+	{
+		vertical-align:middle;
+		height:40px;
+		text-align:right;
+		background-color: #636266;
+		border:1px solid #6F6E73;
+		font-size:18px;
+		box-shadow: 3px 3px 1px #CDCBBC;
+		-webkit-box-shadow: 3px 3px 1px #CDCBBC;
+		-moz-box-shadow: 3px 3px 1px #ccc;
+	}
+	.divider:hover
+	{
+		background-color: #6F6E73;
+		box-shadow: 3px 3px 1px #CDCBBC;
+		-webkit-box-shadow: 3px 3px 1px #CDCBBC;
+		-moz-box-shadow: 3px 3px 1px #CDCBBC;
+
+	}
+	.divider > img
+	{
+		vertical-align:middle;
+		height:40px;
+		text-align:right;
+	}
+/*********************************************************************************/
+/* Search Form                                                                   */
+/*********************************************************************************/
+	input {vertical-align: middle; line-height: 1.4em;}
+	
+	div#searchOptions > table{
+		width:90%;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+	div#searchOptions > table > tbody > tr{
+		line-height: 2.5em;
+	}
+	div#searchOptions > table > tbody > tr > td{
+		font-size: 20px;
+		text-align: left;
+		white-space: nowrap;
+
+	}
+	div#searchOptions > table > tbody > tr > td >select{
+		 width:170px;
+		 text-align: left;
+	}
+	.dropdownButton {
+		font-size: 14px;
+		padding: 5px;
+		vertical-align: middle;
+		margin: 0 0 2px 0;
+		font-family: 'Helvetica', sans-serif;
+	}
+	div#searchOptions > input{
+		width:100%;
+	}
+	th{
+		text-align:center;
+	}
+	input#search, input#reset{
+		width:20%;
+		max-width:60px;
+	}
+	input#address,input.searchOptions{
+		width:100%;
+	}
+	.button
+	{
+		position: relative;
+		display: inline-block;
+		background: #E9E9E9;
+		padding: 0.2em .8em;
+		font-weight: 300;
+		color: #111 !important;
+		-moz-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+		-webkit-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+		-o-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+		-ms-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+		transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+		text-align: center;
+	}
+
+	.button:hover
+	{
+		background: #D8D8D8;
+		color: #333 !important;
+	}
+/*********************************************************************************/
+/* Map Section                                                                   */
+/*********************************************************************************/
+	#googft-mapCanvas {
+	  margin: 0 auto;
+	  padding: 5px;
+	  border:2px solid #777777;
+	}
+	.googft-info-window a{
+		color:blue;
+	}
+	.googft-info-window a:hover{
+		text-decoration: underline;
+	}
+/* Legend Menu ********************************************************************/
+	#legend {
+	    background: #FFF;
+	    padding: 2px 5px 2px 5px;
+	    margin: 5px;
+	    font-size: 12px;
+	    font-family: Arial, sans-serif;
+		border:1px solid #ccc;
+	}
+	#legendWrapper h4{
+		text-align:center;
+	    font-weight:700;
+	}
+	#legend > p{
+	    font-weight:300;
+		font-size:10px;
+		text-align:center;
+		margin: 0 5px 0 5px;
+		padding:2px;
+	}
+	#legend > h4{
+		margin: 0 2px 0 2px;
+	}
+
+/* Map Menu ********************************************************************/
+	#menu_button
+	{
+		border:none;
+		position:absolute;
+		z-index:11;
+	}
+	#map-menu{
+		background-color:#434245;
+		padding:3px;
+		position:absolute;
+		z-index:10;
+		width:250px;
+		margin-left:50px;
+	}
+	#map-menu h3{
+		font-size: 14px;
+		font-weight:300;
+		border:1px solid #777777; 
+		padding:1px; 
+		background-color:#FAFAFA;
+		margin: 0 0 5px 0;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	#map-menu h3:hover{
+		font-weight:600;
+		background-color: #F6CEB1;
+	}
+	#map-menu li{
+		background-color: #FBFBFB;
+		border:1px solid #666666; 
+	}
+	#map-menu li:hover{
+		background-color: #F6CEB1;
+	}
+	#map-menu ul {
+		list-style: none;
+	}
+	form ul li input {
+		margin-bottom: 6px;
+	}
+	.crime-list, .demo-list,
+	.edu-list, .env-list, .parks-list,
+	.infra-list, .biz-list{
+		font-size: 12px;
+		border:none; 
+		padding:0px;
+		margin: 0 0 5px 0;
+		padding-left: 10px;
+		padding-right: 10px;
+		display:none;
+	}
+	.plan-list{
+		font-size: 12px;
+		border:none; 
+		padding:0px;
+		margin: 0 0 5px 0;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+    #download-iframe1,#download-iframe2,
+    #download-iframe3,#download-iframe4,
+    #download-iframe5
+    {
+        display:none;
+    }
+/*********************************************************************************/
+/* Table Section CSS                                                                  */
+/*********************************************************************************/
+
+	div#tableResults1,div#tableResults2,
+	div#tableResults3,div#tableResults4,
+	div#tableResults5{
+		border:1px solid #777777; 
+		margin:0 auto;
+		background-color:#FAFAFA;
+		padding:2px;
+		margin-top:5px; 
+		margin-bottom:5px; 
+		width:90%;
+		overflow: scroll;
+	}
+	.tableTitles{
+		text-align:center;
+		color:#F4781E;
+		font-size: 1.5em;
+		font-weight: 600;
+		margin:20px 0 5px 0;
+
+	}
+/*********************************************************************************/
+/* Tutorial CSS                                                                  */
+/*********************************************************************************/
+
+	h4.subheader{
+		text-align:center;
+		color:#F4781E;
+		margin:8px 0 8px 0;
+		padding:8px;
+		font-size: 1.5em;
+		font-weight: 700;
+		line-height: 1.75em;
+	}
+	.subcontainer
+	{
+		padding-left: 10%;
+		padding-right: 10%;
+		display:none;
+	}
+	.subcontainer_intro
+	{
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	div.subcontainer>p,
+	div.subcontainer_intro>p{
+		line-height: 1.4em;
+		margin:20px 0 20px 0;
+	}
+	.subcontainer_intro  > img,
+	.subcontainer > img{
+		margin: 0 auto;
+		max-width: 70%;
+		height: auto;
+		display:block;
+		padding:5px;
+		border:1px solid #888888;
+		box-shadow: 3px 3px 1px #ccc;
+		-webkit-box-shadow: 3px 3px 1px #ccc;
+		-moz-box-shadow: 3px 3px 1px #ccc;
+	}
+	div.subcontainer > p > a:link,
+	div.subcontainer_intro > p > a:link,
+	ul > li > a:link,
+	div.subcontainer > p > a:visited,
+	div.subcontainer_intro > p > a:visited,
+	ul > li > a:visited
+	{
+		color:#F4781E;
+		text-decoration: none;
+	}
+	div.subcontainer > p > a:hover,
+	div.subcontainer_intro > p > a:hover,
+	ul > li > a:hover{
+		text-decoration: underline;
+		
+	}
+	div.subcontainer > p.caption{
+		text-align: center;
+		color:#777777;
+		margin-top: 3px;
+		font-size: 0.8em;
+	}
+	.subcontainer > ul{
+		margin-left: 30px;
+		list-style-type: square;
+	}
+	div.logoBox{
+		margin:0 auto;
+		width:70%;
+		height:100px;
+		text-align:center;
+	}
+	div.logoBox >img{
+		max-height:100%;
+	}
+
+

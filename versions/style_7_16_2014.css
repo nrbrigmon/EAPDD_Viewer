@@ -8,8 +8,6 @@
 
 @charset 'UTF-8';
 
-@font-face{font-family:'FontAwesome';src:url('font/fontawesome-webfont.eot?v=4.0.1');src:url('font/fontawesome-webfont.eot?#iefix&v=4.0.1') format('embedded-opentype'),url('font/fontawesome-webfont.woff?v=4.0.1') format('woff'),url('font/fontawesome-webfont.ttf?v=4.0.1') format('truetype'),url('font/fontawesome-webfont.svg?v=4.0.1#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}
-
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
@@ -18,6 +16,7 @@
 	{
 		margin: 0;
 		padding: 0;
+		background-color: #F0EDDC;
 	}
 
 	body,input,textarea,select,p
@@ -100,11 +99,15 @@
 		text-align:right;
 	}
 	
-	.tableResults{
+	div#tableResults1,div#tableResults2,
+	div#tableResults3,div#tableResults4,
+	div#tableResults5{
 		border:1px solid #777777; 
 		margin:0 auto;
 		background-color:#FAFAFA;
-		padding:1px; 
+		padding:2px;
+		margin-top:5px; 
+		margin-bottom:5px; 
 		width:90%;
 	}
 
@@ -113,39 +116,36 @@
 	  margin: 0 auto;
 	  padding: 5px;
 	  width: 90%;
-	  border:2px solid #777777; 
-	  margin: 0 auto;
+	  border:2px solid #777777;
 	  z-index: 1;
 	}
 
-	#sub-header
-	{
-	  text-align:center;
-	  padding: 20px;
-	}
+
+	/*SEARCH FORM SECTION*/
+	input {vertical-align: middle; line-height: 1.4em;}
 	
-	#searchOptions{
-	  width:90%;
-	  text-align:left;
-	  margin: 0 auto; 
-	  padding: 10px;
-	  font-size: 1.6em;
-	  line-height: 2em;
-	  vertical-align: middle;
+	div#searchOptions > table{
+		/*border: 1px solid #777777;*/
+		width:80%;
+		margin: 0 auto;
+		text-align: center;
+		margin-top: 10px;
+	}
+	div#searchOptions > table > tbody > tr{
+		line-height: 2.5em;
+	}
+	div#searchOptions > table > tbody > tr > td{
+		font-size: 20px;
+
 	}
 	.dropdownButton {
-		font-size: 20px;
-		vertical-align: middle;
+		font-size: 14px;
 		padding: 5px;
+		vertical-align: middle;
+		margin: 0 0 2px 0;
 		font-family: 'Helvetica', sans-serif;
 	}
-	.searchButtons{
-		font-size: 20px;
-		vertical-align: middle;
-		height:32px;
-		width:200px;
-		padding-left: 10px;
-	}
+	
 	h4, h2 {
 	  margin: 0 0 0 0;
 	  color:#888888;
@@ -163,6 +163,11 @@
 	div#main{
 		background-color: #F0EDDC;
 	}
+	div#sub-header{
+		text-align: center;
+		margin: 10px;
+		padding: 10px;
+	}
 	#menu_button
 	{
 		background-color:white;
@@ -170,21 +175,32 @@
 		position:absolute;
 		width:100px;
 	}
-	th
-	{
-		text-align:center;
-		font-weight: 500;
-	}
-	td
-	{
-		font-size:10px;
-	}
 	.googft-info-window a{
 		color:blue;
 	}
 	.googft-info-window a:hover{
 		text-decoration: underline;
 	}
+/*********************************************************************************/
+/* Legend Menu                                                                   */
+/*********************************************************************************/
+#legend {
+    background: #FFF;
+    padding: 10px;
+    margin: 5px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+	border:1px solid #ccc;
+}
+#legendWrapper h4{
+	text-align:center;
+    font-weight:700;
+}
+#legend > p{
+    font-weight:300;
+	font-size:10px;
+	text-align:center;
+}
 
 /*********************************************************************************/
 /* Map Menu                                                                      */
@@ -282,14 +298,17 @@
 	}
 	div.subcontainer > p > a:link,
 	div.subcontainer_intro > p > a:link,
+	ul > li > a:link,
 	div.subcontainer > p > a:visited,
-	div.subcontainer_intro > p > a:visited
+	div.subcontainer_intro > p > a:visited,
+	ul > li > a:visited
 	{
 		color:#F4781E;
 		text-decoration: none;
 	}
 	div.subcontainer > p > a:hover,
-	div.subcontainer_intro > p > a:hover{
+	div.subcontainer_intro > p > a:hover,
+	ul > li > a:hover{
 		text-decoration: underline;
 		
 	}

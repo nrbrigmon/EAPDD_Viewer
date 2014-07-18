@@ -11,14 +11,18 @@
 <html>
 	<head>
 		<title>Workforce Development</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="gis web viewer for the east arkansas planning district" />
 		<meta name="keywords" content="gis, east arkansas, planning, census" />
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/core_style.css" />
-		<link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen and (max-width:900px)"/>
-		<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width:600px)"/>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&amp;v=3"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
 	</head>
 	<body>
 	
@@ -31,8 +35,9 @@
 			<img id="img6" src="images/chevron_down_new.png"/></div></a>
 			<div id="intro" class="subcontainer_intro">
 				<h4 class="subheader">Workforce Development</h4>
-				
-				<img src="tutorial_imgs/factory_workers.jpg" alt="Workforce Laborers" style="width:30%"/>
+				<img src="tutorial_imgs/factory_workers.jpg" 
+				width="212" height="142" 
+				style="margin:0 auto; display:block"/>
 				
 				<p>Workforce development is the foundation of an economically competitive community. In fact, the availability of skilled labor is now the #1 most important site selection factor when corporations are considering locations for major capital investments, according to 2013 survey results from <a href="http://www.areadevelopment.com/Corporate-Consultants-Survey-Results/">Area Development Online</a>.  Successful economic development requires a coordinated approach to education and workforce training—all three areas must work together to ensure that workers in the community can compete for living wage jobs. In addition, having a population of workers that live and work in the same community achieves many sustainability goals, including fewer cars on the road, improved air quality, and happier community members who spend less time commuting and more time with their families. Working closer to home also helps locally owned businesses and the tax base, as workers eat lunch and shop after work in the community.</p>
 				<p>This tutorial will walk you through a three step process for analyzing your local workforce and identifying potential business and education partners for workforce development programs. For this example, we will focus on manufacturing, but you could look at other industries, too. </p>
@@ -52,7 +57,7 @@
 
 				<div id="stepOne" class="subcontainer">
 					<h4 class="subheader">Map Your Community's Manufacturing Workforce</h4>
-						<img src="tutorial_imgs/StepOne/StepOne_Final.png" alt="KML Showing Local Manufacturing Capacity in Forrest City, AR"/>
+						<img src="tutorial_imgs/StepOne/StepOne_Final.png" width="570" height="380"/>
 						<p class="caption">KML Showing Local Manufacturing Capacity in Forrest City, AR</p>
 						
 					<p>By the end of this first step, you will be able to view this image in Google Earth. Start by visiting the US Census <a target="_blank" href="http://onthemap.ces.census.gov/">OnTheMap</a> to identify manufacturing workers in your community.</p>
@@ -61,10 +66,10 @@
 					
 					<p>On the left side of the page, you will see various menus. In the menu box for "Search", enter &#8220;Forrest City, AR&#8221; in the textbox, then click Search.</p>
 					<p>Find and click &#8220;<b>Forrest City city, AR</b>&#8221; in the search results, and the map will zoom to your new selection.</p>
-						<img src="tutorial_imgs/StepOne/StepOne_5.png"/>
+						<img src="tutorial_imgs/StepOne/StepOne_5.png" width="609" height="340"/>
 						<p class="caption">Map Results</p>
 					<p>A pop up box highlights your selection. Click the option to <font style="color:blue;text-decoration:underline"><b>Perform Analysis on Selection Area</b></font> to bring up settings for analyzing the selected area. </p>
-						<img src="tutorial_imgs/StepOne/StepOne_6.png"/>
+						<img src="tutorial_imgs/StepOne/StepOne_6.png" width="618" height="355"/>
 						<p class="caption">Analysis Settings</p>
 					<p>This menu has four columns: <b>Home/Work Area</b>, <b>Analysis Type</b>, <b>Year</b>, and <b>Job Type</b>. Make the following adjustments to the settings menu:
 					<ul>
@@ -79,7 +84,7 @@
 					<p>Now we will want to refine our results by Industry Segment to focus on manufacturing. At the top left of the menu you will see a Display Settings box. </p> 
 					<p>Select All Workers > Industry Segment > Industry: Goods Producing.</p> 
 					<p>The map will automatically update to reflect your refined analysis showing work locations of Forrest City residents who are employed in the manufacturing (goods producing) industry. The table to the right of the map indicates that, according to Census records, 700 residents of Forrest City work in the manufacturing industry, and approximately 47% of those residents are commuting to jobs that are less than ten miles away from their homes. Approximately 27% of those residents are commuting to jobs more than fifty miles away. These workers could serve as your target population for exploring training programs that would enable them to take jobs that are closer to home, with help from industry and education partners. A second use for this information could be to communicate to site selectors that you have existing manufacturing workers that are commuting to jobs who may prefer to work closer to home.</p> 
-						<img src="tutorial_imgs/StepOne/StepOne_10.png"/>
+						<img src="tutorial_imgs/StepOne/StepOne_10.png" width="645" height="345"/>
 						<p class="caption">Updated Map Based off of New Display Settings</p>
 					<p>Now that we have our results, we will download a KML to be able to view this data in Google Earth. In the Report/Map Outputs box on the left side of the page, select <u>Export Geography</u>.</p>
 						<img src="tutorial_imgs/StepOne/StepOne_11.png"/>
@@ -100,13 +105,13 @@
 				
 				<div id="stepTwo" class="subcontainer">
 					<h4 class="subheader">Identify Industry Partners</h4>
-					<img src="tutorial_imgs/StepTwo/StepTwo_Final_2.png"/>
+					<img src="tutorial_imgs/StepTwo/StepTwo_Final_2.png" width="645" height="405"/>
 					<p class="caption">KML Showing Local Manufacturing Businesses across the EAPDD</p>
 					<p>Now that you have identified your community’s manufacturing workforce, let's identify potential industry partners for a workforce development initiative. Visit the <a target="_blank" href="https://01ee6d1dd95ae76b2dccdb1a21f0373f424169a7.googledrive.com/host/0ByvsZKaRY1-9cmk5OG5CbkhMZHc/index.html">Regional Data Portal</a> at the EAPDD and navigate to the Map section.</p>
-					<img src="tutorial_imgs/StepTwo/StepTwo_1.png"/>
+					<img src="tutorial_imgs/StepTwo/StepTwo_1.png"  width="515" height="337"/>
 					<p class="caption">EAPDD Regional Data Portal - Map</p>
 					<p>The left side of the map has a menu for viewing various map layers. Click on the Business Development tab and a new layer will appear, check the box next to Business - Manufacturing to view a list of small manufacturing businesses across the EAPDD region.</p>
-					<img src="tutorial_imgs/StepTwo/StepTwo_3.png"/>
+					<img src="tutorial_imgs/StepTwo/StepTwo_3.png" width="462" height="300"/>
 					<p class="caption">Manufacturing Businesses across the EAPDD</p>
 					<p>Now, with only that layer selected, click the Download KML Layer(s) button and a download will start for a new KML of the selected layer.</p>
 					<p>If you want, you can view this file in Google Earth by double-clicking the filename. Either way, Step Two is finished!</p>
@@ -121,11 +126,11 @@
 
 				<div id="stepThree" class="subcontainer">
 					<h4 class="subheader">Identify Education Partners</h4>
-					<img src="tutorial_imgs/StepThree/StepThree_Final.png"/>
+					<img src="tutorial_imgs/StepThree/StepThree_Final.png"  width="515" height="500"/>
 					<p class="caption">KML Showing Places of Higher Education in across the EAPDD</p>
 					<p>Now that we have identified our local manufacturing workforce and potential industry partners, let's identify potential education partners to complete the data collection process. We will again use the EAPDD Regional Data Portal.</p>
 					<p>First, uncheck the small business layer. Next, click on the Education tab and check the box for Places of Higher Education.</p>
-					<img src="tutorial_imgs/StepThree/StepThree_2.png"/>
+					<img src="tutorial_imgs/StepThree/StepThree_2.png"  width="462" height="300"/>
 					<p class="caption">Places of Higher Education</p>
 					<p>You should now see a layer with a list of universities and community colleges across the EAPDD region. You could also show the locations of K-12 schools, particularly those that offer career and technical education (CTE) programs relevant to careers in manufacturing. Going back to our example community, economic developers in Forrest City could use this data to evaluate potential locations of training programs and partners for grant applications. In this case, perhaps a partnership could be explored between East Arkansas Community College, local school districts, and maybe even other postsecondary institutions in the region.</p>
 					<p>Now, click the Download KML Layer(s) button and a download will start for a new KML of the selected layer.</p>
@@ -139,7 +144,7 @@
 
 				<div id="stepFour" class="subcontainer">
 					<h4 class="subheader">View Results - Make Connections</h4>
-					<img src="tutorial_imgs/StepFour/StepFour_1.png"/>
+					<img src="tutorial_imgs/StepFour/StepFour_1.png"  width="598" height="349"/>
 					<p class="caption">Google Earth Nationwide Wiew of All The Data</p>
 					<p>Now that all of the data has been collected, we will proceed to visualize it using using Google Earth. This is where you get the full value of using data to help align economic development, workforce development, and education efforts.</p>
 					<p>First, navigate to the folder where you stored the three KMLs. Double-click each file until you see them listed in the Google Earth Places Menu:</p>
@@ -147,10 +152,10 @@
 					<p class="caption">Google Earth Places Menu</p>
 					<p>Now, because our extent is nationwide, we will want to zoom in to our site. Within the places menu, double-click on "Selection Areas" to zoom in to our site. Here you can see where the data sets intersect for Forrest City—where residents with manufacturing experience work, potential industry partners, and potential education partners. Local economic developers are already aware of these connections, but using this data you can visualize them as a means of communicating to other audiences about how these various aspects of your local economy come together—whether that means justifying why your community should win a grant for training or convincing a site selector that you have the necessary assets to provide skilled workers today and tomorrow through partnerships with schools districts and colleges. </p>
 					<p>Zooming out to see where Forrest City residents are working around the region is another way you could use the data to demonstrate to companies and education institutions how connected and interdependent the communities of EAPDD are within the regional economy. Visualizing the data in this way allows you to connect with audiences in a compelling way that does not rely on static data tables and long narrative form reporting. Seeing connections motivates action.</p>
-					<img src="tutorial_imgs/StepFour/StepFour_3.png"/>
+					<img src="tutorial_imgs/StepFour/StepFour_3.png"  width="598" height="349"/>
 					<p class="caption">Forrest City, AR</p>
 					<p>Take advantage and experiment with the navigational buttons at the top right of the Google Earth viewer. Also, click on the different layers to understand more about the available data.</p>
-					<img src="tutorial_imgs/StepFour/StepFour_4.png"/>
+					<img src="tutorial_imgs/StepFour/StepFour_4.png"  width="461" height="334"/>
 					<p class="caption">Final View of our site</p>
 					<p>For more information about similar types of analyses and data, check out the More Info tab below to learn about grant opportunities, best practices in workforce development, and more.</p>
 				</div>
@@ -163,11 +168,11 @@
 
 				<div id="stepFive" class="subcontainer">
 					<h4 class="subheader">For More Information:</h4>
-					<div class="logoBox">
+					<div style="margin:0 auto;width:70%;text-align:center">
 						
-						<img src="tutorial_imgs/moreinfo/US-DeptOfLabor-Seal.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;
-						<img src="tutorial_imgs/moreinfo/450px-Flag_of_Arkansas.svg.png"/>&nbsp;&nbsp;&nbsp;&nbsp;
-						<img src="tutorial_imgs/moreinfo/workforce-training-grants.png"/>
+						<img src="tutorial_imgs/moreinfo/US-DeptOfLabor-Seal.svg" height="100"/>&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="tutorial_imgs/moreinfo/450px-Flag_of_Arkansas.svg.png" height="100"/>&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="tutorial_imgs/moreinfo/workforce-training-grants.png" height="100"/>
 					</div>
 					<p>Federal Grant Opportunities:</p>
 						<ul>
@@ -199,9 +204,9 @@
 
 
 		<!-- Footer -->
-		<div id="footer">
-				<p>Last Updated 7/16/2014</p>
-				<p>by Nathan Brigmon, Civic Analytics</p>
+		<div id="sub-header">
+				Last Updated 7/15/2014
+				by Nathan Brigmon, Civic Analytics
 		</div>
 	</div>
 

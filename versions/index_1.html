@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--
+	Author:   Nathan Brigmon @ Civic Analytics
+    Date:     6/18/2014
+    URL:      /Civic/Projects/EAPDD/01_Working_Data/Nathan/FusionTableMapping/WebCode/index.html
+	Comments: This page was designed to be a testing ground for creating the interactive pilot 
+	viewer for the EAPDD. The web page is hosted on Google Drive.
+-->
+
+<html>
+	<head>
+		<title>Regional Data Portal</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="gis web viewer for the east arkansas planning district" />
+		<meta name="keywords" content="gis, east arkansas, planning, census" />
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&amp;v=3"></script>
+		<script type="text/javascript" src="js/fusiontable710.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+	</head>
+	<body>
+		<div id="main">
+		<!-- Main -->
+		<div id="content" class="container">
+			<br/>
+			<a href="#content"><div class="divider" id="clickme3">SEARCH&nbsp;&nbsp;&nbsp;&nbsp;<img id="img3" src="images/chevron_down_new.png"/></div></a>
+
+			
+		<!--Search functionality has yet to be implemented-->
+		<div id="searchOptions">	
+				<b>ZOOM TO: </b> 
+						<select class="dropdownButton" id="counties_list" onchange="countyZoom(this.value)">
+							<option selected disabled>Choose a County</option>
+							<option value="clay">Clay</option>
+							<option value="craighead">Craighead</option>
+							<option value="crittenden">Crittenden</option>
+							<option value="cross">Cross</option>
+							<option value="greene">Greene</option>
+							<option value="lawrence">Lawrence</option>
+							<option value="lee">Lee</option>
+							<option value="mississippi">Mississippi</option>
+							<option value="phillips">Phillips</option>
+							<option value="poinsett">Poinsett</option>
+							<option value="randolph">Randolph</option>
+							<option value="stfrancis">St. Francis</option>
+						</select>
+						OR
+						<input class="searchButtons" type="text" id="address" placeholder="Type an address...">
+						<br/>
+				<b>SEARCH:  </b> 
+						<select class="dropdownButton" id="tables_list">
+							<option selected disabled>Choose a Table</option>
+							<option value="">n/a</option>
+							<option value="">n/a</option>
+						</select> WHERE 
+						<select class="dropdownButton" id="fields_list">
+							<option selected disabled>Choose a Field</option>
+							<option value="">n/a</option>
+							<option value="">n/a</option>
+						</select>
+						<select class="dropdownButton" id="math_list">
+							<option value="">=</option>
+							<option value="">&#8800;</option>
+							<option value="">></option>
+							<option value="">&#8804;</option>
+							<option value=""><</option>
+							<option value="">&#8805;</option>
+						</select>
+						<input class="searchButtons" type="text" placeholder="Type criteria...">
+						<br/>
+				<div style="text-align:center">
+				<input class="button" type="button" id="search" value="Go!">
+      			<input class="button" type="button" id="reset" value="Reset">
+      			</div>
+		</div>
+			<br/>
+		<!--Mapping Section-->
+		<a href="#clickme1"><div class="divider" id="clickme1">
+					MAP&nbsp;&nbsp;&nbsp;&nbsp;<img id="img1" src="images/chevron_down_new.png"/>
+		</div></a>
+		<br/>
+		<!--Section for the map menu/checkbox -->
+			<div id="menu_button">
+				<img src="images/menu_list_icon.png" height="40"/>
+				<img src="images/menu_list_icon_hover.png" height="40" style="display:none"/>
+			</div>
+			<div id="map-menu">
+			<script type="text/javascript" src="js/downloadFiles.js"></script>
+			<form>
+				<h3 class="crime-menu">Crime and Safety</h3>
+					<ul class="crime-list">
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Fire" id="FireCheckbox">Fire Station</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Police" id="PoliceCheckbox">Law Enforcement</li>
+					</ul>
+				<h3 class="demo-menu">Demographics</h3>
+					<ul class="demo-list">
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_CensusBlocks" id="CensusBlocksCheckbox">Census Blocks</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_CensusBlockGroups" id="CensusBlockGroupsCheckbox">Census Block Groups</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_CensusTracts" id="CensusTractsCheckbox">Census Tracts</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_CensusZCTAs" id="CensusZCTAsCheckbox">Census ZCTAs</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Population" id="PopulationCheckbox">Total Population</li>
+					</ul>
+				<h3 class="edu-menu">Education</h3>
+					<ul class="edu-list">
+					  	<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_PublicSchools" id="PublicSchoolsCheckbox">Public School Locations</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Education" id="EducationCheckbox">Bachelors Degree or Higher</li>
+                        <li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_HigherEd" id="HigherEdCheckbox">Places of Higher Education</li>
+					</ul>
+				<h3 class="env-menu">Environmental Health</h3>
+					<ul class="env-list">
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Brownfields" id="BrownfieldsCheckbox">Brownfield Locations</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_FWS_Habitat" id="FWS_HabitatCheckbox">FWS Critical Habitats</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_EcoStreams" id="EcoStreamsCheckbox">Eco-Sensitive Streams</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_STATSGOSoils" id="STATSGOSoilsCheckbox">STATSGO Soils</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_WildlifeMgmt" id="WildlifeMgmtCheckbox">Wildlife Mgmt Districts</li>
+					</ul>
+				<h3 class="infra-menu">Infrastructure Development</h3>
+					<ul class="infra-list">
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Projects" id="ProjectsCheckbox">Emerging Projects (Example)</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Airports" id="AirportsCheckbox">Airport Locations</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_RailStop" id="RailStopCheckbox">Passenger Rail Stations</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Interstate" id="InterstateCheckbox">Interstate System</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Ports" id="PortsCheckbox">Port Locations</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Railroads" id="RailroadsCheckbox">Rail-road System</li>
+					</ul>
+				<h3 class="plan-menu">Land Use Planning</h3>
+					<ul class="plan-list">
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_CityLimits" id="CityLimitsCheckbox">City Limits</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_SchoolDistricts" id="SchoolDistrictsCheckbox">School Districts</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_CensusCounties" id="CensusCountiesCheckbox">EAPDD Counties</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_CensusTAZs" id="CensusTAZsCheckbox">Traffic Analysis Zones</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Income" id="IncomeCheckbox">Median Household Income</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Boundary" id="BoundaryCheckbox" checked>EAPDD Boundary</li>
+					</ul>
+				<h3 class="parks-menu">Parks and Recreation</h3>
+					<ul class="parks-list">
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_ParkLands" id="ParkLandsCheckbox">Parks and Public Land</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_RiversStreams" id="RiversStreamsCheckbox">Rivers and Streams</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Aquifers" id="AquifersCheckbox">Aquifers</li>
+						<li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_Wetlands" id="WetlandsCheckbox">Wetlands</li>
+					</ul>
+                <h3 class="biz-menu">Business Development</h3>
+                    <ul class="biz-list">
+                        <li><input type="checkbox" onClick="ToggleLayer(this.value)" name="type" value="CB_SmallBiz" id="SmallBizCheckbox">Small Businesses - Manufacturing </li>
+                    </ul>
+				<h3 style="text-align:center"><input value="Download KML Layer(s)" onclick="downloadKmls(this.form)" id="dataDownload">	</h3>
+				</form>
+                <iframe src="" id="download-iframe"></iframe>
+			</div>
+		<!-- /Section for the map menu/checkbox -->
+			
+			<div id="mapToggle">
+				<div id="googft-mapCanvas"></div>
+				<br/>
+			</div>
+
+		<!--The table will display results from the GIS search-->
+		<a href="#clickme2"><div class="divider"  id="clickme2">TABLE&nbsp;&nbsp;&nbsp;&nbsp;<img  id="img2" src="images/chevron_down_new.png" /></div></a>
+
+			<script type="text/javascript" src="js/hidemap.js"></script>
+			<div id="tableResults">
+			<div id="sub-header"><b>Table Results Here:</b></div>
+				<table class="tableResults">
+					<tr style="border:1px solid black;">
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr style="border:1px solid black;">
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr style="border:1px solid black;">
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr style="border:1px solid black;">
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr style="border:1px solid black;">
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr style="border:1px solid black;">
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+				</table>
+	
+			</div>
+			<br/>
+	
+		<div class="divider"></div>
+		<!-- /Main -->
+		<!-- Footer -->
+		<div id="sub-header">
+				Last Updated 7/10/2014
+				by Nathan Brigmon, Civic Analytics
+		</div>
+
+	</div>
+</div>
+
+	</body>
+</html>

@@ -1,0 +1,103 @@
+/*<!--
+	Author:   Nathan Brigmon @ Civic Analytics
+    Date:     6/18/2014
+    URL:      /Civic/Projects/EAPDD/01_Working_Data/Nathan/FusionTableMapping/WebCode/index.html
+	Comments: This page was designed to be a testing ground for creating the interactive pilot 
+	viewer for the EAPDD. The web page is hosted on Google Drive.
+-->/*/
+
+/*********************************************************************************/
+/* Basic and Core CSS                                                                        */
+/*********************************************************************************/
+	#sub-header p {
+		margin: 5px 0 5px 0;
+	}
+	.divider
+	{
+		height:30px;
+		font-size:16px;
+		box-shadow: 2px 2px 1px #CDCBBC;
+		-webkit-box-shadow: 2px 2px 1px #CDCBBC;
+		-moz-box-shadow: 2px 2px 1px #ccc;
+	}
+	.divider:hover
+	{
+		box-shadow: 2px 2px 1px #CDCBBC;
+		-webkit-box-shadow: 2px 2px 1px #CDCBBC;
+		-moz-box-shadow: 2px 2px 1px #CDCBBC;
+
+	}
+	.divider > img
+	{
+		height:30px;
+	}
+/*********************************************************************************/
+/* Search Form                                                                   */
+/*********************************************************************************/	
+	div#searchOptions > table{
+		width:90%;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+	div#searchOptions > table > tbody > tr > td{
+		font-size: 16px;
+
+	}
+	div#searchOptions > table > tbody > tr > td >select{
+		 width:100%;
+	}
+	.dropdownButton {
+		font-size: 12px;
+		padding: 3px;
+		vertical-align: middle;
+		margin: 0 0 2px 0;
+		font-family: 'Helvetica', sans-serif;
+	}
+	
+/*********************************************************************************/
+/* Map Section                                                                   */
+/*********************************************************************************/
+	#googft-mapCanvas {
+		height: 450px !important;
+	}
+
+	#map-menu h3{
+		font-size: 14px;
+		margin: 1px 0 1px 0;
+		border:none;
+		padding:0 10px 0 10px;
+	}
+	.crime-list, .demo-list,
+	.edu-list, .env-list, .parks-list,
+	.infra-list, .biz-list{
+		font-size: 11px;
+	}
+	.plan-list{
+		font-size: 11px;
+	}
+	#map-menu{
+		width:200px;
+	}
+/*********************************************************************************/
+/* Map Section                                                                   */
+/*********************************************************************************/
+	
+	.tableTitles{
+		font-size: 1.3em;
+		margin:15px 0 5px 0;
+	}
+/*********************************************************************************/
+/* Tutorial CSS                                                                  */
+/*********************************************************************************/
+
+	div.subcontainer>p,
+	div.subcontainer_intro>p{
+		margin:10px 0 10px 0;
+	}
+	
+	div.logoBox{
+		height:80px;
+		width:90%;
+	}
+
+	

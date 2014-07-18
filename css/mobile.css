@@ -1,0 +1,61 @@
+/*<!--
+	Author:   Nathan Brigmon @ Civic Analytics
+    Date:     6/18/2014
+    URL:      /Civic/Projects/EAPDD/01_Working_Data/Nathan/FusionTableMapping/WebCode/index.html
+	Comments: This page was designed to be a testing ground for creating the interactive pilot 
+	viewer for the EAPDD. The web page is hosted on Google Drive.
+-->/*/
+
+/*********************************************************************************/
+/* Basic and Core CSS                                                                        */
+/*********************************************************************************/
+
+.container{
+	width:100%;
+}
+body,input,textarea,select,p
+	{
+		font-family: 'Helvetica', sans-serif;
+		font-size: 10pt;
+		font-weight: 300;
+		line-height: 1.5em;
+	}
+
+/*********************************************************************************/
+/* Map Section                                                                   */
+/*********************************************************************************/
+	#googft-mapCanvas {
+		height: 300px !important;
+	}
+
+	#map-menu h3{
+		font-size: 1em;
+		margin: 1px 0 1px 0;
+		border:none;
+		padding:0 10px 0 10px;
+	}
+	.crime-list, .demo-list,
+	.edu-list, .env-list, .parks-list,
+	.infra-list, .biz-list{
+		font-size: 10px;
+	}
+	.plan-list{
+		font-size: 10px;
+	}
+	#map-menu{
+		width:200px;
+	}
+/*********************************************************************************/
+/* Tutorial CSS                                                                        */
+/*********************************************************************************/
+h4.subheader{
+		padding:5px;
+		font-size: 1.2em;
+		font-weight: 700;
+		line-height: 1.5em;
+	}
+
+div.logoBox{
+		height:50px;
+		width:100%;
+	}
