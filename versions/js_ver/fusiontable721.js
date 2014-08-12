@@ -7,38 +7,40 @@
   var policeTable = "1_rG77iqslLY2AebdLOWeEubA3tnfM05REHR2_k0v";
   //DEMOGRAPHICS
   var blockGroupTable = "1dgI_iSc6km2H64cH6vzwjnvSMA08-cUpsHLUktVy";
-  var blocksTable = "1Nm-Wi72eDqw0CED0ylwizPiQ0y93V3hLOj374Q7-";
-  var tractsTable = "1bnU9uy9rwn57zL_aJRITg1L4SRErCuEyNydtIlZ6";
-  var zctasTable = "1IHiq6ZbUOIcEJDTcnGBSeY7MTDWEl-R_bEhpFmvj";
+  var blocksTable = "1__5Vuulos6VB6ncRIgJntrnZrldP4XVxyB6-t38w";
+  var tractsTable = "1nJZVvKViYgUxmV5NS0uSam9bGFEyx1PFsBCLqE34";
+  var zctasTable = "1X2LlUOVKxZdSiVOZmKICJGvDwjytwCsoNSQRReU1";
   //EDUCATION
-  var schoolsTable = "1qFlaLhdDyboBG0_X6n2aVG-ELpVC24lsUpjpKxE9";
+  var schoolsTable = "1AxvdHCGfysRzuLyFT_n7hoJu3FnY_8fosgjkFMST"; 
   var higherEdTable = "1Q98D88ABUIOlTyc1EpWEmuxbx9VZ5QbIvza3FKGx";
   //ENV HEALTH
-  var brownfieldsTable = "1hqvmp5p7p79W9vRGJN0P3Nvba9mDKmHNHrP9_b2A";
-  var criticalHabitatTable = "1wf1mUWaQPBq538Ys10HG1TXKWImFmz5US3zwBFu-";
-  var sensitiveStreamsTable = "1Y7ZxPVLXEYHnUMbazO9nxPRcd8H_j6U6grCGsm0H";
-  var statsSoilsTable = "1Hkl4nXjdG_OG6Ky0e_DVdCMq9CDyfE7ivJ2jREqx";
-  var mgmtDistrictsTable = "1OCsPa-OjJ6wayr8j7ZuO_uPAMAao4iC3gGy15Knw";
+  var brownfieldsTable = "1CJvvNfCx6XdI0Rqfo9K-t2Sh1VylgsjZxADivQnl";
+  var criticalHabitatTable = "1sw8ipZyt8GBpCAOTHYucNwwGlB0ubWgYpNgCOAPh";
+  var sensitiveStreamsTable = "1_DoKFIVNt7sSQjwCOxJwdFNJZVjQlOvU1qa8JPFx";
+  var statsSoilsTable = "1o6X8pd2MtvICh5OT7Q_Eb7viF-Zg1EwlXMrJkNQR";
+  var mgmtDistrictsTable = "1gKF9qFaVSpijRnOX-9isPgC4XB6UUYR-cYgQjDI1";
   //INFRA DEV
-  var airportTable = "1EAHy46KB9AQkF7-eKUCANVFKhK41k5B8GZLLn_tE"; 
-  var railStopTable = "1W1EdiG-H7l2m9xFBWNjhVMTZ2O2dlQTrdchGriLG"; 
-  var interstateTable = "13qL8GPdUQgdNeP22QJ_uW_-hc02Ln9wzXjsMEAay"; 
-  var portsTable = "1Pd7dPI5yDp2oxfGswIJMqJMKVSJUw5ATGqYmSPHZ"; 
-  var railRoadTable = "1_Pru4FnxfcxBQGYqcUBtp8Gx3CuypZtvAjiuSvCw"; 
+  var airportTable = "13gDGB8j9kj4z-nBieQe5Sir2Mtok9rsEBFdwwC7m"; 
+  var railStopTable = "1EnY2VEUsXrHyYyw2E73Dgz5RHW0jPkK__0bwioGr"; 
+  var interstateTable = "1UO-AQmoGwshP8lsAPkg70iEEpwvFln2cW9tc3_wM"; 
+  var portsTable = "1N1femQOon_EZhocJv9mMsF-fzJnx49UMBY8hij-b"; 
+  var railRoadTable = "1R_XCteSVViyq6-vT3puTMvAoq20kQF5w7BPa4lOa"; 
   //LU PLANNING
-  var tazsTable = "1avBwYMT3gPVf-xd_s0a_uySayPcdkpoK_Wpld8lY";
-  var countiesTable = "16mOieypquzOAotwxY06wZtDdNU3eTVd9fR59LTWi";
-  var schoolDistrictsTable = "1z32mA1xZtcKk9k-8lz3lAcsmx-Yxu3L5qP4ExlE5";
-  var cityLimitsTable = "1J0xwcoFPYjSIeWIWCiH3i66RQHf4dx1agE47hTy6";
+  var tazsTable = "1KWEUnRfXptO_6MQ-sbJDX9KjmDIil5A6Ww3I2RAc";
+  var countiesTable = "1_obGOBMyk7-aDXF8vma_4PAhzxyTuE4joiLd5sSK";
+  var schoolDistrictsTable = "1Vlvj0aj4YYdTuQZjRZ7pXxhCBu21h54g6FRvEnnq";
+  var cityLimitsTable = "1G_JX-PNpTHv8ZPefmZuCblBUS1TOLnemsPJ_XPgq";
   //PARKS AND REC
-  var wetlandsTable = "18l5s_ipzrymIWNan-dc9vODOdAFpk6cfiwITeMht";
-  var allStreamsTable = "1LOdz4vpHNc7vTgxwkJ7_aNRYG3TqtyOOuMBSJ4sp";
-  var aquiferTable = "1BuHzMZK1zm65Y5Ya4foIN5GiXcKWEScOPsV95_QW";
-  var parkLandTable = "16-AuqR9e7vGoHEvGhHR5pk2fdxBC9xEP74WMs5x_";
-//Business Development
+  var wetlandsTable = "1Zr7FUhMwxKFdWqzW_TWdtqMQsTVUEE6gR7eYJyS0";
+  var allStreamsTable = "1mT41JCeu0XAoAv8nXnowlG_ekflo92C1EnTHDYtT";
+  var aquiferTable = "1YO6sdd1FnwR3bCyOTzwzjJAcTDsM-ZyuTil0kvxo";
+  var parkLandTable = "1gihSIUL3pVejFl0GCuIFeHjbuJJHf-PA2JHKjnQ8";
+  //Business Development
   var smallBizTable = "1e1LMrXDJuUce1K9XYtpxBIbIkqnBe5Qr-552bFWK";
 
-  
+  //****These are the search form variables****//
+  var tableIdSelection, mathSelection, criteriaTerms, fieldSelection;
+
   //****This section is declaring the layers ready to visualize ***//
   var map;
   var tableTitles = [];
@@ -56,11 +58,11 @@
     var geocoder = new google.maps.Geocoder();
     google.maps.visualRefresh = true;
 
- 
     
     var mapDiv = document.getElementById('googft-mapCanvas');
     mapDiv.style.width = '90%';
     mapDiv.style.height = '600px';
+
     map = new google.maps.Map(mapDiv, {
       center: EAPDDCentroid,
       zoom: defaultZoom,
@@ -92,45 +94,73 @@
               window.alert('Address could not be located: ' + status);
             }
           });
-        };
-      addLegend(map);
+        };    
 
-    //need to switch to key up later..
-    google.maps.event.addDomListener(document.getElementById('search'),
-            'click', zoomToAddress);
-    google.maps.event.addDomListener(window, 'keypress', function(e) {
+    google.maps.event.addDomListener(document.getElementById('search'), //this is if the user clicks "search"
+            'click', function(){
+           //zoomToAddress();
+           searchFormParameters();  
+        });
+    google.maps.event.addDomListener(window, 'keypress', function(e) { //this is if the user press "enter"
           if (e.keyCode == 13) {
-            zoomToAddress();
+           //zoomToAddress();
+           searchFormParameters();
           }
         });
     google.maps.event.addDomListener(document.getElementById('reset'),
             'click', function() {
               map.setCenter(EAPDDCentroid);
               map.setZoom(defaultZoom);
-              // layer.setOptions({
-              //   query: {
-              //     select: locationColumn,
-              //     from: tableId
-              //   }
-              // });
+              initialize();
+              
     });
+  }
+
+
+  function searchFormParameters(){
+      //set variables equal to form choices..
+      tableIdSelection = '0'; 
+      mathSelection = '0';
+      criteriaTerms = String($('#criteria_list').val());
+      if (criteriaTerms.length < 2){
+        return
+      }
+      else{
+        tableIdSelection = $('#tables_list_choose_table').val(); 
+        mathSelection = $('#math_list').val();
+        $('input:checkbox').removeAttr('checked');  ///remove all checked boxes to reset the map
+        if (tableIdSelection == '18be1mKs33mrqnayTnVqjqqtXJdpPswWX8DEoaI0D'){
+            fieldSelection = $('#fire_table_fields').val();
+            document.getElementById("FireCheckbox").checked = true;
+            updateMapLayers();
+        }
+        if (tableIdSelection == '1_rG77iqslLY2AebdLOWeEubA3tnfM05REHR2_k0v'){
+            fieldSelection = $('#police_table_fields').val();
+            document.getElementById("PoliceCheckbox").checked = true;
+            updateMapLayers();
+        }
+      }
   }
 
 //**Toggle Function for the checkbox**///
   function ToggleLayer(tableSelection){
-      var legendWrapper = document.getElementById("legendWrapper");
+      var legendWrapper = document.getElementById("legend2");
       updateLegend(legendWrapper);
+      //currently you cannot perform a search and then go back and toggle layers
+      //need to find a way to fix this by adding flexibility
+      searchFormParameters();
       updateMapLayers();
+
   }
 
   function addLegend(map) {
-      var legendWrapper = document.createElement('div');
-      var legend = document.createElement('div');
-      legendWrapper.id = 'legendWrapper';
-      legendWrapper.index = 1;
-      legendWrapper.appendChild(legend);
-      map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(
-          legendWrapper);
+      var legendWrapper = document.getElementById('legend2');
+      // var legend = document.createElement('div');
+      // legendWrapper.id = 'legendWrapper';
+      // legendWrapper.index = 1;
+      // legendWrapper.appendChild(legend);
+      // map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(
+      //     legendWrapper);
       legendContent(legendWrapper);
       
       $("#tableResults1").hide();
@@ -143,7 +173,7 @@
 
   // Generate the content for the legend
   function updateLegend(){
-      var legendWrapper = document.getElementById('legendWrapper');
+      var legendWrapper = document.getElementById('legend2');
       var legend = document.getElementById('legend');
       legendWrapper.removeChild(legend);
       legendContent(legendWrapper);
@@ -249,7 +279,10 @@
   		
   		if (document.getElementById("SmallBizCheckbox").checked == true)        {
   				layerList.push("<p>Businesses - Manufacturing</p>");
-          tableTitles.push("<h4 class='tableTitles'>Businesses - Manufacturing</h4>");              }			
+          tableTitles.push("<h4 class='tableTitles'>Businesses - Manufacturing</h4>");              }		
+
+		layerList.push("<h4 id='add-layer-form'><img id='addLayerIcon' src='images/add_map_layer_icon_BRIGHT.png'/> Add</h4>");
+	
         legend.innerHTML = layerList.join('');
         legendWrapper.appendChild(legend);
   }
@@ -269,7 +302,6 @@
               tableSelection.push($(elem).val());
               
           });
-
           for (i = 0; i < tableSelection.length; i++) {
               if (tableSelection[i] == "fireTable") {
                   tableArray.push(fireTable);
@@ -365,9 +397,38 @@
               }
           }
         }
-        tableViewer(tableArray);
+         tableViewer(tableArray); ///calling tableViz2.js
+         
+         
+          //This first piece is testing whether or not the Search form was used... if it wasn't this part is skipped.
+          if (tableSelection.length == 1 && tableIdSelection != '0' ){
+            console.log(""+fieldSelection+" "+mathSelection+" '"+criteriaTerms + "'");
 
-          if (tableSelection.length == 1){
+
+            layer1 = new google.maps.FusionTablesLayer({
+                  map: map,
+                  heatmap: { enabled: false },
+                  query: {
+                      select: "col2",
+                      from: tableIdSelection,
+                      where: ""+fieldSelection+" "+mathSelection+" '"+criteriaTerms + "'"
+                  },
+                  options: {
+                      styleId: 2,
+                      templateId: 2
+                  }
+              });
+
+              layer1.setMap(map);
+              layer2.setMap(null);
+              layer3.setMap(null);
+              layer4.setMap(null);
+              layer5.setMap(null);
+
+
+          }
+          //if only the checkboxes are used, we proceed from here...
+          if (tableSelection.length == 1 && tableIdSelection == '0'){
               
               layer1 = new google.maps.FusionTablesLayer({
                   map: map,
@@ -609,7 +670,7 @@
 
   }
 
-  //COUNTY CENTROIDS
+  //AR County Centroid Values
       var clayCentroid = new google.maps.LatLng(36.3496385,-90.4346745);
       var craigheadCentroid = new google.maps.LatLng(35.8481639,-90.661836);
       var crittendenCentroid  = new google.maps.LatLng(35.1373664,-90.2884164);
@@ -640,6 +701,12 @@
     if (value === "stfrancis"){ map.setCenter(stfrancisCentroid); map.setZoom(10);}
   }
 
+  function fieldSelector(value) {
+      var elements = $('div.hidden_selections').children().hide();
+      $('div.default').hide();
+      elements.filter('.' + value).show(); // show the ones we want
+                                
+  }
   google.maps.event.addDomListener(window, 'load', initialize);
   
   

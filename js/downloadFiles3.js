@@ -12,8 +12,10 @@ function downloadKmls(frm)
 	//loop through kml array and create downloadable link array 
 	//there is an easier way, but I haven't gotten there yet...
 	var kmlDownloadLinkArray = [];
+	///this query will have to be broken up into multiple parts
 	kmlLinkPart1 = "https://www.google.com/fusiontables/exporttable?query=select+col2+from+";
-	kmlLinkPart2 = "&o=kml&g=col2&styleId=2&templateId=2";
+	//the download query will only come from col#, so this needs to be corrected
+	kmlLinkPart2 = "+where+col7+contains+ignoring+case+'marianna'&o=kml&g=col2&styleId=2&templateId=2";
 	///this link can also be queried....
 	
 	for (i = 0; i < kmlArray.length; i++){ //then create an array
@@ -49,6 +51,7 @@ function downloadKmls(frm)
 
 
 	if (kmlDownloadLinkArray.length > 0){ //then use array to download //the below is the best way to download multiple files
+        //currently this works on Chrome, but it does not work on Internet Explorer
         if (kmlDownloadLinkArray.length == 1){
             window.location.assign(kmlDownloadLinkArray[0]);
         }
